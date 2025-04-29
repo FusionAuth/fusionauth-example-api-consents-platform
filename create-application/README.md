@@ -1,3 +1,3 @@
-The scripts here let you create an entity and add permissions to them. The permissions are currently hardcoded.
+The scripts here let you create an application and add scopes to them. The scopes are currently hardcoded.
 
-Copy .env.sample to .env and update with your credentials, the entity type you want to create, and the entity to which you want to grant permission.
+Copy .env.sample to .env and update with your credentials and FusionAuth location.
