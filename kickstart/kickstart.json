@@ -19,7 +19,7 @@
       "description": "Unrestricted API key"
     }
   ],
-  "licenseId": "ADD LICENSE ID",
+  "licenseId": "LICENSE ID",
   "requests": [
     {
       "method": "POST",
@@ -50,7 +50,6 @@
             "idTokenKeyId": "#{asymmetricKeyId}"
           },
           "oauthConfiguration": {
-            "logoutURL": "http://localhost:8080/oauth2/logout",
             "clientSecret": "#{clientSecret}",
             "authorizedRedirectURLs": [
               "http://localhost:8080/oauth-redirect"
@@ -78,55 +77,65 @@
       "method": "POST",
       "url": "/api/application/#{applicationId}/scope",
       "body": {
-        "name": "investments.read",
-        "description": "Investment portfolio information",
-        "required": false,
-        "defaultConsentDetail": "Read investment portfolio information",
-        "defaultConsentMessage": "Read investment portfolio information"
+        "scope" : {
+          "name": "investments.read",
+          "description": "Investment portfolio information",
+          "required": false,
+          "defaultConsentDetail": "Read investment portfolio information",
+          "defaultConsentMessage": "Read investment portfolio information"
+        }
       }
     },
     {
       "method": "POST",
       "url": "/api/application/#{applicationId}/scope",
       "body": {
-        "name": "transactions.read",
-        "description": "Transaction history and details",
-        "required": true,
-        "defaultConsentDetail": "Read transaction history",
-        "defaultConsentMessage": "Read transaction history"
+        "scope" : {
+          "name": "transactions.read",
+          "description": "Transaction history and details",
+          "required": true,
+          "defaultConsentDetail": "Read transaction history",
+          "defaultConsentMessage": "Read transaction history"
+        }
       }
     },
     {
       "method": "POST",
       "url": "/api/application/#{applicationId}/scope",
       "body": {
-        "name": "profile.read",
-        "description": "User profile and contact information",
-        "required": true,
-        "defaultConsentDetail": "Read user profile information",
-        "defaultConsentMessage": "Read user profile information"
+        "scope" : {
+          "name": "profile.read",
+          "description": "User profile and contact information",
+          "required": true,
+          "defaultConsentDetail": "Read user profile information",
+          "defaultConsentMessage": "Read user profile information"
+        }
       }
     },
     {
       "method": "POST",
       "url": "/api/application/#{applicationId}/scope",
       "body": {
-        "name": "accounts.read",
-        "description": "Basic account information and balances",
-        "required": false,
-        "defaultConsentDetail": "Read basic account and balance information",
-        "defaultConsentMessage": "Read basic account and balance information"
+        "scope" : {
+          "name": "accounts.read",
+          "description": "Basic account information and balances",
+          "required": true,
+          "defaultConsentDetail": "Read basic account and balance information",
+          "defaultConsentMessage": "Read basic account and balance information"
+        }
       }
     },
     {
       "method": "POST",
       "url": "/api/application/#{applicationId}/scope",
       "body": {
-        "name": "creditScore.read",
-        "description": "Credit score information",
-        "required": false,
-        "defaultConsentDetail": "Read credit score information",
-        "defaultConsentMessage": "Read credit score information"
+        "scope" : {
+          "name": "creditScore.read",
+          "description": "Credit score information",
+          "required": false,
+          "defaultConsentDetail": "Read credit score information",
+          "defaultConsentMessage": "Read credit score information"
+        }
       }
     },
     {
