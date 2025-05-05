@@ -40,7 +40,6 @@ const changebankURL = process.env.changebankURL;
 // Validate the token signature, make sure it wasn't expired
 const validateUser = async (userTokenCookie: { access_token: string }) => {
 
-  console.log(userTokenCookie);
   // Make sure the user is authenticated.
   if (!userTokenCookie || !userTokenCookie?.access_token) {
     return false;
@@ -97,7 +96,6 @@ app.get("/", async (req, res) => {
     res.cookie(userSession, { stateValue, verifier: pkcePair.code_verifier, challenge: pkcePair.code_challenge }, { httpOnly: true });
 
     res.render('home');
-    // res.sendFile(path.join(__dirname, '../templates/home.html'));
   }
 });
 //end::homepage[]
@@ -135,6 +133,13 @@ app.get('/oauth-redirect', async (req, res, next) => {
   // Capture query params
   const stateFromFusionAuth = `${req.query?.state}`;
   const authCode = `${req.query?.code}`;
+
+  const oauthError = `${req.query?.error_reason}`;
+ 
+  if (oauthError == 'consent_canceled') {
+    res.render('error');
+    return;
+  }
 
   // Validate cookie state matches FusionAuth's returned state
   const userSessionCookie = req.cookies[userSession];
@@ -184,8 +189,6 @@ app.get("/account", async (req, res) => {
     res.redirect(302, '/');
   } else {
 
-      console.log(changebankURL+'/read-balance');
-      console.log( `Bearer ${userTokenCookie.access_token}`);
       const response = await fetch(changebankURL+'/read-balance', {
       method: 'GET',
       headers: {
@@ -199,7 +202,6 @@ app.get("/account", async (req, res) => {
     }
 
     const balanceData: Balance = await response.json();
-    console.log(balanceData);
     res.render('account', { balanceData });
     //res.render(path.join(__dirname, '../templates/account.html'), {
        //balanceData: balanceData
