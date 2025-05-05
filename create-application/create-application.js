@@ -10,21 +10,19 @@ const client = new FusionAuthClient(FUSIONAUTH_API_KEY, BASE_URL);
 // tag::createApplication
 async function createApplication() {
   try {
-    const response = await client.createApplication('944408dd-de0b-4222-8081-63503854078d', {
+    const response = await client.createApplication('e9fdb985-9173-4e01-9d73-ac2d60d1dc8e', {
       application: {
         name: 'MoneyScope',
-        data: {
-          developers
-        }
         registrationConfiguration: { 
           enabled: true,
           type: 'basic'
         },
         oauthConfiguration: {
-          clientSecret: 'jgD6qW3Tglj71xhzrh8nMDTAsEjDVRPQIQQrBUSyCFA',
+          clientSecret: 'super-secret-secret-that-should-be-regenerated-for-production',
           authorizedRedirectURLs: [
             "http://localhost:8080/oauth-redirect"
           ],
+          logoutURL: "http://localhost:8080/oauth2/logout",
           enabledGrants: [
             'authorization_code',
             'refresh_token'
@@ -96,7 +94,7 @@ const analyticsScopes = [
           name: scope.name,
           required: scope.required,
           defaultConsentMessage: scope.consent,
-          defaultConsentDetail: "",
+          defaultConsentDetail: scope.description,
           description: scope.description
         }
       };
