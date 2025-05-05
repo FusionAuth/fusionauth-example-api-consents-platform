@@ -54,6 +54,7 @@
             "authorizedRedirectURLs": [
               "http://localhost:8080/oauth-redirect"
             ],
+            "logoutURL": "http://localhost:8080/oauth2/logout",
             "enabledGrants": [
               "authorization_code",
               "refresh_token"
