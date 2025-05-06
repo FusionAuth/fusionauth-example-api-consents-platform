@@ -18,6 +18,8 @@ The `moneyscope-application` directory contains a fully working version of the M
 
 The `changebank-apis` directory contains a fully working version of the Changebank APIs.
 
+`create-application` is a directory that contains a FusionAuth SDK script to create the third-party application instead of using Kickstart. It can safely be ignored.
+
 ## Project Dependencies
 
 * Docker, for running FusionAuth
@@ -28,7 +30,7 @@ The `changebank-apis` directory contains a fully working version of the Changeba
 
 First, edit `kickstart/kickstart.json` and add a valid Essentials or Enterprise license key. Look for the line `"licenseId": "LICENSE ID",` and replace `LICENSE ID` with a valid key.
 
-To run FusionAuth, just stand up the docker containers using `docker-compose`.
+To run FusionAuth, just stand up the docker containers using `docker compose`.
 
 ```shell
 docker compose up
@@ -69,6 +71,3 @@ Accept the scopes and you'll be logged into the MoneyScope application.
 
 You can modify the bank balance by changing the APIs in the `changebank-apis/routes/index.js` file.
 
-## Other Stuff
-
-`create-application` is a directory that contains a FusionAuth SDK script to create the third-party application instead of using Kickstart.
