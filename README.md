@@ -40,6 +40,8 @@ This will start a PostgreSQL database, OpenSearch service, and the FusionAuth se
 
 For the MoneyScope application:
 
+Copy the `env.sample` file to `.env` and edit it if needed. (For example, if you are using a remote FusionAuth instance.)
+
 ```shell
 cd moneyscope-application
 npm install
@@ -47,6 +49,8 @@ npm run dev
 ```
 
 In a separate terminal window, to start the Changebank APIs:
+
+Copy the `env.sample` file to `.env` and edit it if needed. (For example, if you are using a remote FusionAuth instance.)
 
 ```shell
 cd changebank-apis
