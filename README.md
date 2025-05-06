@@ -68,3 +68,7 @@ Visit the local webserver at `http://localhost:8080/` and sign in using the cred
 Accept the scopes and you'll be logged into the MoneyScope application.
 
 You can modify the bank balance by changing the APIs in the `changebank-apis/routes/index.js` file.
+
+## Other Stuff
+
+`create-application` is a directory that contains a FusionAuth SDK script to create the third-party application instead of using Kickstart.
