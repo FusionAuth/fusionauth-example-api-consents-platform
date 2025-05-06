@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Example of setting up an express application with typescript.",
   "scripts": {
-    "dev": "ts-node-dev --exit-child src/index.ts",
-    "setup": "ts-node src/setup.ts"
+    "dev": "ts-node-dev --exit-child --files src/index.ts"
   },
   "author": "Alex Patterson",
   "license": "Apache-2.0",
   "dependencies": {
     "@fusionauth/typescript-client": "^1.46.0",
+    "@types/express-session": "^1.18.1",
     "@types/node-fetch": "^2.6.12",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
