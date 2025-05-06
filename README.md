@@ -14,17 +14,20 @@ This application was built to illustrate the [API Consents Platform use case](ht
 
 The `docker-compose.yml` file and the `kickstart` directory are used to start and configure a local FusionAuth server.
 
-You must edit `kickstart/kickstart.json` and add a [valid Essentials or Enterprise license key](https://fusionauth.io/pricing).
-
 The `moneyscope-application` directory contains a fully working version of the MoneyScope application.
+
 The `changebank-apis` directory contains a fully working version of the Changebank APIs.
 
 ## Project Dependencies
 
 * Docker, for running FusionAuth
 * Node 20.12.2 or later, for running the applications
+* A [valid Essentials or Enterprise license key](https://fusionauth.io/pricing)
 
 ## Running FusionAuth
+
+First, edit `kickstart/kickstart.json` and add a valid Essentials or Enterprise license key. Look for the line `"licenseId": "LICENSE ID",` and replace `LICENSE ID` with a valid key.
+
 To run FusionAuth, just stand up the docker containers using `docker-compose`.
 
 ```shell
