@@ -24,7 +24,6 @@
     {
       "method": "POST",
       "url": "/api/key/generate/#{asymmetricKeyId}",
-      "tenantId": "#{defaultTenantId}",
       "body": {
         "key": {
           "algorithm": "RS256",
@@ -78,7 +77,7 @@
       "method": "POST",
       "url": "/api/application/#{applicationId}/scope",
       "body": {
-        "scope" : {
+        "scope": {
           "name": "investments.read",
           "description": "Investment portfolio information",
           "required": false,
@@ -91,7 +90,7 @@
       "method": "POST",
       "url": "/api/application/#{applicationId}/scope",
       "body": {
-        "scope" : {
+        "scope": {
           "name": "transactions.read",
           "description": "Transaction history and details",
           "required": true,
@@ -104,7 +103,7 @@
       "method": "POST",
       "url": "/api/application/#{applicationId}/scope",
       "body": {
-        "scope" : {
+        "scope": {
           "name": "profile.read",
           "description": "User profile and contact information",
           "required": true,
@@ -117,7 +116,7 @@
       "method": "POST",
       "url": "/api/application/#{applicationId}/scope",
       "body": {
-        "scope" : {
+        "scope": {
           "name": "accounts.read",
           "description": "Basic account information and balances",
           "required": true,
@@ -130,7 +129,7 @@
       "method": "POST",
       "url": "/api/application/#{applicationId}/scope",
       "body": {
-        "scope" : {
+        "scope": {
           "name": "creditScore.read",
           "description": "Credit score information",
           "required": false,

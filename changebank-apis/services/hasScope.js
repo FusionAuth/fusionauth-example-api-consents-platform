@@ -1,6 +1,5 @@
 const jose = require('jose');
 
-// tag::hasScope
 function hasScope(scope) {
   return (req, res, next) => {
     const decodedToken = jose.decodeJwt(req.verifiedToken);
@@ -14,6 +13,5 @@ function hasScope(scope) {
     res.send({ error: `You do not have permissions to do this.` });
   }
 }
-// end::hasScope
 
 module.exports = hasScope;

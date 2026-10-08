@@ -1,5 +1,8 @@
 # Example API Consents Application
 
+> [!WARNING]
+> This repository is generated from content that lives at [github.com/FusionAuth/fusionauth-site](https://github.com/FusionAuth/fusionauth-site/tree/main/astro/extractedcode/example-api-consents-platform). Changes to files here _will be overwritten by that automation_. File an issue or pull request with [fusionauth-site](https://github.com/FusionAuth/fusionauth-site) instead.
+
 This repo holds two example JavaScript applications. 
 
 * MoneyScope, a financial analysis tool

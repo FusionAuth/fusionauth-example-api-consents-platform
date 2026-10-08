@@ -7,7 +7,6 @@ const BASE_URL = process.env.BASE_URL;
 
 const client = new FusionAuthClient(FUSIONAUTH_API_KEY, BASE_URL);
 
-// tag::createApplication
 async function createApplication() {
   try {
     const response = await client.createApplication('e9fdb985-9173-4e01-9d73-ac2d60d1dc8e', {
@@ -48,9 +47,7 @@ async function createApplication() {
     console.error('Error creating application:', error);
   }
 }
-// end::createApplication
 
-// tag::createScopes
 async function createScopes(applicationId) {
 
 const analyticsScopes = [
@@ -108,7 +105,6 @@ const analyticsScopes = [
     console.error('Error creating scope:', JSON.stringify(error));
   }
 }
-// end::createScopes
 
 (async () => {
   const applicationId = await createApplication();
